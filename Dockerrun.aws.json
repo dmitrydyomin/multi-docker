@@ -5,24 +5,28 @@
       "name": "client",
       "image": "dmitrydyomin/multi-client",
       "hostname": "client",
+      "memoryReservation": 100,
       "essential": false
     },
     {
       "name": "server",
       "image": "dmitrydyomin/multi-server",
       "hostname": "api",
+      "MemoryReservation": 100,
       "essential": false
     },
     {
       "name": "worker",
       "image": "dmitrydyomin/multi-worker",
       "hostname": "worker",
+      "MemoryReservation": 100,
       "essential": false
     },
     {
       "name": "nginx",
       "image": "dmitrydyomin/multi-nginx",
       "hostname": "nginx",
+      "MemoryReservation": 100,
       "essential": true,
       "portMappings": [
         {
