@@ -20,3 +20,19 @@ after_success:
   - docker push dmitrydyomin/multi-nginx
   - docker push dmitrydyomin/multi-server
   - docker push dmitrydyomin/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: eu-central-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-eu-central-1-662545592183
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+
+# deploy:
+#   edge: true
+#   provider: elasticbeanstalk
